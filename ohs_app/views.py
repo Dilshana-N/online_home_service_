@@ -332,6 +332,7 @@ def appoinmentview_worker(request):
     print(s)
     return render(request, "worker/viewappointment_worker.html", {"s": s})
 
+@login_required(login_url='login_page')
 def workers_work(request):
     c = request.user.id
     print(c)
