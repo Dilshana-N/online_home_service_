@@ -315,6 +315,7 @@ def view_schedule_worker(request):
     n = schedule.objects.all
     return render(request, "worker/viewschedule_worker.html", {"view_schedule": n})
 
+@login_required(login_url='login_page')
 def view_filtered_schedule(request):
         u = worker_register.objects.get(user=request.user)
         a = schedule.objects.filter(worker=u)
